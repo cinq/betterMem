@@ -1,5 +1,6 @@
-package com.cinq.betterMem
+package com.cinq.betterMem.model
 
 enum class ContactType {
-    email, phoneNumber
+    EMAIL,
+    PHONE
 }
