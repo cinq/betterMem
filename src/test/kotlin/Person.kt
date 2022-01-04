@@ -6,7 +6,7 @@ import org.assertj.core.api.Assertions.assertThat
 
 @Test
 fun PersonTest(){
-    val p = Person("Martin", "yesterday")
+    val p = Person(999,"Martin", "yesterday", "1986-09-12")
 
-    assertThat(p.name).isEqualTo("Martin")
+    assertThat(p.firstname).isEqualTo("Martin")
 }

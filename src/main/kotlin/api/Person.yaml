@@ -4,7 +4,7 @@ info:
   description: API to read and update the Person in this system
   version: 1.0.0
 servers:
-  - url: 'http://localhost:8080/api/v1'
+  - url: 'http://localhost:8088/api'
     description: 'Localhost for testing on your own device'
 paths:
   '/person':
