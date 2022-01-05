@@ -9,7 +9,7 @@ plugins {
 
 group = "com.cinq."
 version = "0.0.2-SNAPSHOT"
-java.sourceCompatibility = JavaVersion.VERSION_11
+java.sourceCompatibility = JavaVersion.VERSION_17
 
 repositories {
     mavenCentral()
@@ -24,18 +24,20 @@ dependencies {
     testImplementation("org.springframework.boot:spring-boot-starter-test") {
         exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
     }
-    testImplementation("org.junit.jupiter:junit-jupiter-api:5.6.2")
-    testImplementation("org.assertj:assertj-core:3.17.2")
-    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.6.2")
+    testImplementation(kotlin("test"))
 }
 
 
 val compileKotlin: KotlinCompile by tasks
 compileKotlin.kotlinOptions {
-    jvmTarget = "11"
+    jvmTarget = "17"
 }
 
 val compileTestKotlin: KotlinCompile by tasks
 compileTestKotlin.kotlinOptions {
-    jvmTarget = "11"
+    jvmTarget = "17"
+}
+
+tasks.test {
+    useJUnitPlatform()
 }
